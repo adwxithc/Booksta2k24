@@ -1,6 +1,6 @@
 import 'dotenv/config'
 
-import express, { NextFunction, Request, Response } from 'express';
+import express from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import morgan from 'morgan';
@@ -15,8 +15,6 @@ app.use(express.urlencoded({ limit: '50mb', extended: true, parameterLimit: 5000
 app.use(cors({credentials: true}))
 
 app.use(morgan('combined'));
-
-
 
 
 // Use error handler
