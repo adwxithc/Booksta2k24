@@ -1,4 +1,3 @@
-// src/utils/logger.ts
 
 import winston, { format, transports, Logger } from 'winston';
 import dotenv from 'dotenv';
