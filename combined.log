@@ -16,3 +16,11 @@
 {"level":"info","message":"Database connected successfully","service":"book-service","timestamp":"2024-08-14 18:12:07"}
 {"level":"info","message":"Server running at http://localhost:4000","service":"book-service","timestamp":"2024-08-14 18:12:25"}
 {"level":"info","message":"Database connected successfully","service":"book-service","timestamp":"2024-08-14 18:12:25"}
+{"level":"info","message":"Server running at http://localhost:4000","service":"book-service","timestamp":"2024-08-14 23:48:07"}
+{"level":"info","message":"Database connected successfully","service":"book-service","timestamp":"2024-08-14 23:48:08"}
+{"level":"info","message":"Server running at http://localhost:4000","service":"book-service","timestamp":"2024-08-14 23:49:41"}
+{"level":"info","message":"Database connected successfully","service":"book-service","timestamp":"2024-08-14 23:49:41"}
+{"level":"info","message":"Server running at http://localhost:4000","service":"book-service","timestamp":"2024-08-14 23:54:49"}
+{"level":"info","message":"Database connected successfully","service":"book-service","timestamp":"2024-08-14 23:54:49"}
+{"level":"info","message":"Server running at http://localhost:4000","service":"book-service","timestamp":"2024-08-15 00:04:33"}
+{"level":"info","message":"Database connected successfully","service":"book-service","timestamp":"2024-08-15 00:04:33"}

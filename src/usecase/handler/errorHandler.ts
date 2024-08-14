@@ -1,7 +1,7 @@
-import { Next, Req, Res } from "../../infrastructure/types/expressTypes";
+import { Req, Res } from "../../infrastructure/types/expressTypes";
 import ErrorResponse from "./errorResponse";
 
-const errorHandler = (err: any, req: Req, res: Res, next: Next) => {
+const errorHandler = (err: unknown, req: Req, res: Res) => {
   
 
   if (err instanceof ErrorResponse) {

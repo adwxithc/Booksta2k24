@@ -12,6 +12,6 @@ export async function connectDB() {
     } catch (error) {
         // Log the error to the console
         // Throw the error to be handled by the calling function
-        throw ErrorResponse.internalError("database connection failed")
+        throw ErrorResponse.internalError(`${error} database connection failed`)
     }
 }
