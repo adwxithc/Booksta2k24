@@ -6,7 +6,8 @@ import { IPostRepository } from "../../interface/repository/IpostRepository";
 import { ICloudinary } from "../../interface/services/ICloudinary";
 import { IResponse } from "../../interface/services/IResponse";
 
-export const addPost = async(
+// Function to add a post to the database
+export const addPost = async (
     postData: IPost,
     postImages: Express.Multer.File[],
     postRepository: IPostRepository,
@@ -14,10 +15,13 @@ export const addPost = async(
 ): Promise<IResponse> => {
     try {
 
-        if (Object.values(postImages).length > 0) {    
-            
+        // Check if there are any images to upload
+        if (Object.values(postImages).length > 0) {
+
+            // Create an array of promises to upload each image
             const imageUploadPromises = Object.values(postImages).flat().map(file => {
 
+                // Check if the file buffer is undefined
                 if (!file.buffer) {
 
                     console.log('File buffer is undefined for:', file.originalname);
@@ -28,15 +32,18 @@ export const addPost = async(
                 return cloudinary.uploadImage(file.buffer, 'booksta-user-posts');
 
             });
-            
+
+            // Wait for all images to be uploaded
             const uploadedImages: ImageObj[] = await Promise.all(imageUploadPromises);
 
             // Add image data to postData
             postData.content = uploadedImages.map(image => image);
-        } 
+        }
 
+        // Add the post to the database
         const response = await postRepository.addPost(postData);
-        
+
+        // Check if the post was added successfully
         if (response) {
             return {
                 status: HttpStatusCode.OK,
