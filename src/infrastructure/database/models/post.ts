@@ -3,14 +3,28 @@ import mongoose, { Schema, Document } from "mongoose";
 import { IPost } from "../../../domain/post";
 
 
-// Create a new Schema for the Post model
+const ImageObjSchema = new Schema({
+    url: {
+        type: String,
+        required: true
+    },
+    publicId: {
+        type: String,
+        required: true
+    }
+});
+
+// Define the main post schema
 const postSchema: Schema<IPost & Document> = new Schema<IPost & Document>({
     title: {
         type: String,
         required: true
     },
-    content: {
+    userId: {
         type: String,
+    },
+    content: {
+        type: [Schema.Types.Mixed],
         required: true
     },
     description: {
@@ -18,8 +32,9 @@ const postSchema: Schema<IPost & Document> = new Schema<IPost & Document>({
         required: true
     },
 }, {
-    timestamps: true 
+    timestamps: true
 });
+
 
 // Create a new Model for the Post schema
 const PostModel = mongoose.model<IPost & Document>("Post", postSchema);
