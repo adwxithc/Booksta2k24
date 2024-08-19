@@ -1,7 +1,8 @@
-import { IPost } from "../../../../domain/post";
-import { HttpStatusCode } from "../../../../domain/types/httpStatusCodes";
-import { ImageObj } from "../../../../domain/types/imageObj";
-import ErrorResponse from "../../../handler/errorResponse";
+import { IPost } from "../../../domain/post";
+import { File } from "../../../domain/types/file";
+import { HttpStatusCode } from "../../../domain/types/httpStatusCodes";
+import { ImageObj } from "../../../domain/types/imageObj";
+import ErrorResponse from "../../handler/errorResponse";
 import { IPostRepository } from "../../interface/repository/IpostRepository";
 import { ICloudinary } from "../../interface/services/ICloudinary";
 import { IResponse } from "../../interface/services/IResponse";
@@ -9,7 +10,7 @@ import { IResponse } from "../../interface/services/IResponse";
 // Function to add a post to the database
 export const addPost = async (
     postData: IPost,
-    postImages: Express.Multer.File[],
+    postImages: File[],
     postRepository: IPostRepository,
     cloudinary: ICloudinary
 ): Promise<IResponse> => {

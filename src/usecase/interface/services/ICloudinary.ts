@@ -1,4 +1,4 @@
-import { ImageObj } from "../../../../domain/types/imageObj"
+import { ImageObj } from "../../../domain/types/imageObj";
 
 export interface ICloudinary {
     uploadImage(buffer: Buffer, folder: string): Promise<ImageObj> 

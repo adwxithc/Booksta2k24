@@ -1,5 +1,5 @@
 import { IPost } from "../../../domain/post";
-import { IPostRepository } from "../../../usecase/usecase/interface/repository/IpostRepository";
+import { IPostRepository } from "../../../usecase/interface/repository/IpostRepository";
 import PostModel from "../models/post";
 import { addPost } from "./post/addPost";
 

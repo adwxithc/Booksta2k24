@@ -1,5 +1,5 @@
 import { PostAdapter } from "../../../controller/postAdapter";
-import { PostUsecase } from "../../../usecase/usecase/usecase/postUsecase";
+import { PostUsecase } from "../../../usecase/usecase/postUsecase";
 import PostModel from "../../database/models/post";
 import { PostRepository } from "../../database/repository/postRepository";
 import { CloudinaryService } from "../../services/cloudinary";

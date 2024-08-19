@@ -1,4 +1,5 @@
-import { IPost } from "../../../domain/post";
+import { IPost } from "../../domain/post";
+import { File } from "../../domain/types/file";
 import { IPostRepository } from "../interface/repository/IpostRepository";
 import { ICloudinary } from "../interface/services/ICloudinary";
 import { addPost } from "./post/addPost";
@@ -18,7 +19,7 @@ export class PostUsecase{
     }
 
 
-    addPost(postData: IPost, postImages: Express.Multer.File[]) {
+    addPost(postData: IPost, postImages: File[]) {
         return addPost(postData, postImages, this._postRepository, this._cloudinary);
     }
 }

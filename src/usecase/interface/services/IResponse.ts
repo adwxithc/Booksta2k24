@@ -1,4 +1,4 @@
-import { IPost } from "../../../../domain/post";
+import { IPost } from "../../../domain/post";
 
 export interface IResponse<T= IPost> {
     status:number,

@@ -1,5 +1,6 @@
+import { File } from './../domain/types/file';
 import { Next, Req, Res } from "../infrastructure/types/expressTypes";
-import { PostUsecase } from "../usecase/usecase/usecase/postUsecase";
+import { PostUsecase } from "../usecase/usecase/postUsecase";
 
 // Class to handle the adding of a post
 export class PostAdapter {
@@ -21,7 +22,7 @@ export class PostAdapter {
             const postData = { userId: req.userId, ...req.body};
 
             // Call the addPost method of the PostUsecase with the postData and the files
-            const response = await this._postUsecase.addPost(postData, req.files as Express.Multer.File[]);
+            const response = await this._postUsecase.addPost(postData, req.files as File[]);
 
             // Send the response back to the client
             res.status(response.status).json({
