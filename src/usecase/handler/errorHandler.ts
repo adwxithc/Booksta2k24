@@ -3,7 +3,7 @@ import ErrorResponse from "./errorResponse";
 
 const errorHandler = (err: any, req: Req, res: Res, next: Next) => {
   
-    console.log(err,']]]]]]]]]]]]]]]]]]]]');
+    console.log(err);
     
 
   if (err instanceof ErrorResponse) {

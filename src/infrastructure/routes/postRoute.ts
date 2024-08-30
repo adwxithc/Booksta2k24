@@ -19,4 +19,21 @@ postRouter.patch("/:postId/unlike",auth,(req: Request, res:Response, next:NextFu
     postAdapter.unLikePost(req, res);
 })
 
+postRouter.post("/:postId/comment",auth,(req: Request, res:Response, next:NextFunction) => {       
+    postAdapter.addComment(req, res);
+})
+
+
+postRouter.get("/:postId/comments",auth,(req: Request, res:Response, next:NextFunction) => {       
+    postAdapter.getComments(req, res);
+})
+
+postRouter.delete("/:postId/comment/:commentId",auth,(req: Request, res:Response, next:NextFunction) => {       
+    postAdapter.deleteComment(req, res);
+})
+postRouter.put("/:postId/comment/:commentId",auth,(req: Request, res:Response, next:NextFunction) => {       
+    postAdapter.updateComment(req, res);
+})
+
+
 export default postRouter;
