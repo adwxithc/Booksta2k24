@@ -10,4 +10,13 @@ postRouter.post("/add-post", auth, upload, (req: Request, res:Response, next:Nex
     postAdapter.addPost(req, res, next);
 });
 
+postRouter.patch("/:postId/like",auth,(req: Request, res:Response, next:NextFunction) => {       
+    postAdapter.likePost(req, res);
+})
+
+
+postRouter.patch("/:postId/unlike",auth,(req: Request, res:Response, next:NextFunction) => {       
+    postAdapter.unLikePost(req, res);
+})
+
 export default postRouter;

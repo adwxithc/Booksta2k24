@@ -29,4 +29,31 @@ export class PostAdapter {
         }
     }
 
+    async likePost(req:Req, res:Res){
+        const { postId } = req.params;
+        const {userId} = req as {userId:string};
+
+        const response = await this._postUsecase.likePost({postId,userId});
+
+        res.status(response.status).json({
+            message: response.message,
+            data: response.data,
+            success: response.success
+        });
+
+    }
+
+    async unLikePost(req:Req, res:Res){
+        const { postId } = req.params;
+        const {userId} = req as {userId:string};
+
+        const response = await this._postUsecase.unLIkePost({postId,userId});
+
+        res.status(response.status).json({
+            message: response.message,
+            data: response.data,
+            success: response.success
+        });
+    }
+
 }
