@@ -9,7 +9,7 @@ export async function auth(req: Req, res: Res, next: Next) {
     
     // Getting the token from the request header
     const token = req.header("Authorization")?.split(' ')[1];
-  
+
     // If no token is found, return an unauthorized error
     if (!token) {
         throw ErrorResponse.unauthorized("Unauthorized access, not token");

@@ -1,8 +1,8 @@
 import jwt from "jsonwebtoken";
 import 'dotenv/config';
-import { IJwt } from "../../usecase/usecase/interface/services/IJwt";
 import { DecodedToken } from "../../domain/types/decodedToken";
 import ErrorResponse from "../../usecase/handler/errorResponse";
+import { IJwt } from "../../usecase/interface/services/IJwt";
 
 
 export class GenerateToken implements IJwt{
