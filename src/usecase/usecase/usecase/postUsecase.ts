@@ -75,7 +75,7 @@ export class PostUsecase {
     }) {
         return await addComment({
             postRepository: this._postRepository,
-            commetnRepository: this._commentRepository,
+            commentRepository: this._commentRepository,
             text,
             postId,
             userId,
